@@ -2,20 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:5407/posts/my-first-post/</loc>
-    <lastmod>2025-12-30T17:41:12+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:5407/posts/</loc>
-    <lastmod>2025-12-30T17:41:12+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:5407/</loc>
-    <lastmod>2025-12-30T17:41:12+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:5407/posts/hello/</loc>
+    <loc>http://localhost:4110/posts/hello/</loc>
     <lastmod>2025-12-30T17:17:50+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:5407/categories/</loc>
+    <loc>http://localhost:4110/posts/</loc>
+    <lastmod>2025-12-30T17:17:50+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:5407/tags/</loc>
+    <loc>http://localhost:4110/</loc>
+    <lastmod>2025-12-30T17:17:50+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4110/tags/example/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4110/tags/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4110/posts/my-first-post/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4110/categories/</loc>
   </url>
 </urlset>

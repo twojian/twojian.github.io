@@ -1,4 +1,4 @@
-baseURL: "http://localhost:4110/"  # 本地测试
+baseURL: "https://twojian.github.io/"  # 本地测试
 languageCode: "zh-cn"
 title: "Twojian Blog"
 theme: PaperMod
