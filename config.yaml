@@ -1,91 +1,101 @@
-baseURL: "https://twojian.github.io/"  # 本地测试
-languageCode: "zh-cn"
-title: "Twojian Blog"
-theme: PaperMod
-
-enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
+# ========================================================
+# 基础全局配置
+# ========================================================
+baseURL: "https://twojian.github.io/"  # 网站绑定的根域名（生成静态链接的基础）
+languageCode: "zh-cn"                  # 网站语言设置（影响 HTML 标签中的 lang 属性）
+title: "Twojian Blog"                 # 浏览器标签页显示的网站主标题
+theme: PaperMod                       # 指定使用的主题文件夹名称
+# 强制使用绝对路径，这是解决“点不进去”的特效药
+canonifyURLs: false
+relativeURLs: false
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # 搜索功能必须生成 index.json
+# --------------------------
+# 编译控制
+# --------------------------
+enableRobotsTXT: true                 # 是否生成 robots.txt（对 SEO 友好，告诉爬虫哪些可抓取）
+buildDrafts: false                    # 是否编译草稿文件（content 中 draft: true 的文章）
+buildFuture: false                    # 是否编译发布日期在未来的文章
+buildExpired: false                   # 是否编译已过期的文章
 
 pagination:
-  pagerSize: 5   # Hugo v0.128+ 新分页参数
+  pagerSize: 5                        # 列表页每页显示的文章条数（Hugo v0.128+ 建议用法）
 
-# Google Analytics 可本地忽略，生产环境再启用
-googleAnalytics: UA-123-45
+minify:                               # 静态文件压缩设置（提高访问速度）
+  disableXML: true                    # 不压缩 XML 文件
+  minifyOutput: false                 # 启用 HTML/CSS/JS 压缩
 
-minify:
-  disableXML: true
-  minifyOutput: true
-
+# ========================================================
+# 核心参数配置 (params)
+# ========================================================
 params:
-  env: development
-  title: "Twojian Blog"
-  description: "我的博客描述"
-  keywords: [Blog, Hugo, PaperMod]
-  author: Twojian
-  images: ["<link 或本地路径用于 OpenGraph/Twitter>"]
-  DateFormat: "January 2, 2006"
-  defaultTheme: auto
-  disableThemeToggle: false
+  env: production                     # 环境变量：production 会启用混淆、压缩等生产环境特性
+  title: "Twojian Blog"               # 页面左上角显示的名称
+  description: "我的博客描述"          # 网站描述（SEO：搜索结果中显示的摘要）
+  keywords: [Blog, Hugo, PaperMod]    # 网站关键词（SEO：利于搜索收录）
+  author: Twojian                     # 默认文章作者
+  # images: 用于 OpenGraph 和 Twitter 卡片预览图
+  images: []       
+  DateFormat: "January 2, 2006"       # 文章日期显示格式
+  defaultTheme: auto                  # 主题模式：auto(跟随系统), dark(深色), light(浅色)
 
-  # 页面显示参数
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
-  disableSpecial1stPost: false
-  disableScrollToTop: false
-  comments: false
-  hidemeta: false
-  hideSummary: false
-  showtoc: false
-  tocopen: false
-
-  # favicon / 图标
+  # --------------------------
+  # 自定义与样式控制
+  # --------------------------
   assets:
-    favicon: "<link 或本地路径>"
-    favicon16x16: "<link 或本地路径>"
-    favicon32x32: "<link 或本地路径>"
-    apple_touch_icon: "<link 或本地路径>"
-    safari_pinned_tab: "<link 或本地路径>"
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+  ShowReadingTime: true               # 是否在文章元数据中显示预计阅读时间
+  ShowShareButtons: true              # 是否在文章末尾显示社交平台分享按钮
+  ShowPostNavLinks: true              # 是否显示“上一篇/下一篇”导航
+  ShowBreadCrumbs: true               # 是否显示面包屑导航（例如：Home > Posts > 文章名）
+  ShowCodeCopyButtons: false          # 是否在代码块显示一键复制按钮
+  ShowWordCount: true                 # 是否显示文章字数统计
+  ShowRssButtonInSectionTermList: true # 是否在列表页显示 RSS 图标
+  UseHugoToc: true                    # 使用 Hugo 原生目录
+  disableSpecial1stPost: false        # 是否禁用列表页第一篇大图突出显示
+  disableScrollToTop: false           # 是否禁用右下角的“返回顶部”按钮
+  comments: false                     # 是否全局开启评论功能
+  hidemeta: false                     # 是否隐藏文章元数据（日期、作者等）
+  hideSummary: false                  # 是否在列表页隐藏文章摘要
+  showtoc: false                      # 是否默认展开目录（true 则每篇都展开）
+  tocopen: false                      # 目录是否默认开启（通常与 showtoc 配合）
 
+  # --------------------------
+  # 导航栏 Logo 与标签
+  # --------------------------
   label:
-    text: "Twojian's Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
+    text: "Twojian's Home"            # 导航栏 Logo 文字
+    icon: /apple-touch-icon.png       # 导航栏 Logo 图标路径
+    iconHeight: 18                    # 图标显示高度（px）
 
-  profileMode:
-    enabled: false
-    title: "Twojian Blog"
-    subtitle: "这是副标题"
-    imageUrl: "<头像路径>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
-    buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
-
-  homeInfoParams:
-    Title: "Hi there is Twojian's blog\U0001F44B"
-    Content: 欢迎来到Twojian的博客
-
+  # --------------------------
+  # 社交媒体图标 (出现在 HomeInfo 或 Footer)
+  # --------------------------
   socialIcons:
-    - name: x
+    - name: x                         # 图标名称（必须是主题支持的，如 github, twitter, email）
       url: "https://x.com/"
     - name: stackoverflow
       url: "https://stackoverflow.com"
     - name: github
       url: "https://github.com/twojian/"
 
-  analytics:
+  # --------------------------
+  # 首页欢迎信息 (Home Info Mode)
+  # --------------------------
+  homeInfoParams:
+    Title: "Hi there is Twojian's blog👋"  # 首页欢迎大标题
+    Content: 欢迎来到Twojian的博客             # 首页欢迎语内容
+
+  # --------------------------
+  # 搜索与分析
+  # --------------------------
+  analytics:                          # 第三方站长工具统计
     google:
       SiteVerificationTag: "XYZabc"
     bing:
@@ -93,42 +103,64 @@ params:
     yandex:
       SiteVerificationTag: "XYZabc"
 
+  # --------------------------
+  # 文章封面图控制
+  # --------------------------
   cover:
-    hidden: true
-    hiddenInList: true
-    hiddenInSingle: true
+    hidden: false                      # 是否隐藏封面图（全局）
+    hiddenInList: false                # 是否在列表页隐藏封面图
+    hiddenInSingle: false              # 是否在文章内页隐藏封面图
 
+  # --------------------------
+  # 文章编辑建议按钮
+  # --------------------------
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes"
-    appendFilePath: true
+    URL: "https://github.com/<path_to_repo>/content" # GitHub 仓库对应路径
+    Text: "Suggest Changes"           # 按钮文字
+    appendFilePath: true              # 是否在 URL 后自动拼接当前文章的文件路径
 
+  # --------------------------
+  # 站内搜索功能配置 (fuse.js)
+  # --------------------------
   fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    limit: 10
-    keys: ["title", "permalink", "summary", "content"]
-
+    isCaseSensitive: false            # 是否区分大小写
+    shouldSort: true                  # 结果是否按相关性排序
+    location: 0                       # 搜索起始位置
+    distance: 1000                    # 搜索范围
+    threshold: 0.4                    # 模糊匹配阈值（0.0 极精准，1.0 极模糊）
+    minMatchCharLength: 0             # 触发搜索的最小字符长度
+    limit: 10                         # 最多显示多少个搜索结果
+    keys: ["title", "permalink", "summary", "content"] # 搜索权重范围
+# ========================================================
+# 菜单导航栏配置
+# ========================================================
 menu:
   main:
-    - identifier: categories
-      name: catego
-      url: /categories/
-      weight: 10
+    - identifier: categories          # 菜单唯一标识符
+      name: 类别                # 菜单显示的名称
+      url: /categories/               # 跳转的链接
+      weight: 10                      # 排序权重（数值越小越靠左）
     - identifier: tags
-      name: tags
+      name: 标签
       url: /tags/
       weight: 20
     - identifier: example
-      name: example.org
+      name: 分享
       url: https://example.org
       weight: 30
+    - identifier: search
+      name: 🔍 搜索
+      url: /search/
+      weight: 5
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 15
 
-pygmentsUseClasses: true
+# ========================================================
+# 代码高亮配置
+# ========================================================
+pygmentsUseClasses: true              # 使用类名进行高亮控制（配合 custom.css）
 markup:
   highlight:
-    noClasses: false
+    noClasses: false                  # 设置为 false 才能配合自定义 CSS

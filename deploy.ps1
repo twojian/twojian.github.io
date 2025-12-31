@@ -1,91 +1,81 @@
-# =========================================
-# Hugo + PaperMod 自动部署脚本 (Windows)
+﻿# =========================================
+# Hugo 博客一键发布脚本（深度清理版）
 # =========================================
 
-# --------------------------
-# 配置参数
-# --------------------------
-$ProjectDir = "D:\software\Hugo\Twojian"      # Hugo 项目根目录
-$RepoURL_HTTPS = "https://github.com/twojian/twojian.github.io.git"
-$RepoURL_SSH   = "git@github.com:twojian/twojian.github.io.git"
-$DeployMethod = "HTTPS"                        # "HTTPS" 或 "SSH"
-$GitHubPAT = "ghp_XXXXXXXXXXXXXXXXXXXX"       # HTTPS 使用的 Personal Access Token
+param(
+    [string]$PostTitle,
+    [string]$ProjectDir = "D:\software\Hugo\Twojian",
+    [string]$GitHubUsername = "twojian",
+    [string]$Editor = "code"
+)
 
-# --------------------------
-# 切换到项目目录
-# --------------------------
-if (-not (Test-Path $ProjectDir)) {
-    Write-Host "❌ 项目目录不存在: $ProjectDir"
+# 初始化编码
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+if ([string]::IsNullOrWhiteSpace($PostTitle)) {
+    Write-Host "`n❌ 错误：请提供文章标题！" -ForegroundColor Red
     exit
 }
+
 Set-Location $ProjectDir
-Write-Host "✅ 切换到项目目录: $ProjectDir"
 
 # --------------------------
-# 更新 config.yaml baseURL
+# 1. 创建文章 (支持 Page Bundle 模式)
 # --------------------------
-$configFile = Join-Path $ProjectDir "config.yaml"
-if (Test-Path $configFile) {
-    $baseURL = "https://twojian.github.io/"
-    (Get-Content $configFile) -replace '^baseURL:.*$', "baseURL: `"$baseURL`"" | Set-Content $configFile
-    Write-Host "✅ baseURL 已更新为 $baseURL"
-} else {
-    Write-Host "❌ 配置文件不存在: config.yaml"
-    exit
-}
+# 建议使用文件夹模式(index.md)，这样图片可以直接放一起
+$Slug = $PostTitle -replace ' ', '-' -replace '[^a-zA-Z0-9\u4e00-\u9fa5\-]', ''
+$PostPath = "content/posts/$Slug/index.md"
+
+Write-Host "🚀 正在创建文章 (Page Bundle)..." -ForegroundColor Cyan
+hugo new $PostPath
 
 # --------------------------
-# 生成静态文件到 public/
+# 2. 编辑文章
 # --------------------------
-hugo -D -d public
+Write-Host "⌨️  正在打开编辑器..." -ForegroundColor Yellow
+Start-Process $Editor (Join-Path $ProjectDir $PostPath) -Wait
+Read-Host "确认文件已保存？按【回车键】开始深度清理并生成..."
+
+# --------------------------
+# 3. 深度清理与重新编译 (解决图标过大的核心步骤)
+# --------------------------
+Write-Host "🧹 正在清理旧的静态文件与缓存..." -ForegroundColor Yellow
+# 物理删除 public 和 resources，确保样式 100% 重新生成
+if (Test-Path "public") { Remove-Item -Path "public" -Recurse -Force }
+if (Test-Path "resources") { Remove-Item -Path "resources" -Recurse -Force }
+
+Write-Host "🏗️  正在生成静态页面 (Production Mode)..." -ForegroundColor Cyan
+# 不加 -D 确保草稿不会被发布，--gc 进一步清理残留
+hugo --gc --minify
 
 $PublicDir = Join-Path $ProjectDir "public"
-if (-not (Test-Path $PublicDir)) {
-    Write-Host "❌ Hugo 生成失败: public/ 不存在"
-    exit
-}
-Write-Host "✅ Hugo 静态文件生成完成"
 
 # --------------------------
-# 切换到 public/
+# 4. 部署到 GitHub (HTTPS 模式)
 # --------------------------
 Set-Location $PublicDir
 
-# --------------------------
-# 初始化 Git（如果未初始化）
-# --------------------------
+# 确保 Git 初始化
 if (-not (Test-Path ".git")) {
     git init
     git branch -M main
-    Write-Host "✅ 初始化 Git 仓库"
 }
 
-# --------------------------
-# 配置 remote
-# --------------------------
-$CurrentOrigin = git remote get-url origin 2>$null
-if ($CurrentOrigin) {
-    Write-Host "⚠️ 远程 origin 已存在，更新 URL"
-    if ($DeployMethod -eq "HTTPS") {
-        git remote set-url origin "https://$($env:USERNAME):$GitHubPAT@github.com/twojian/twojian.github.io.git"
-    } else {
-        git remote set-url origin $RepoURL_SSH
-    }
-} else {
-    Write-Host "✅ 添加远程仓库 origin"
-    if ($DeployMethod -eq "HTTPS") {
-        git remote add origin "https://$($env:USERNAME):$GitHubPAT@github.com/twojian/twojian.github.io.git"
-    } else {
-        git remote add origin $RepoURL_SSH
-    }
-}
+# 自动处理 Remote 
+# 注意：若之前推送失败，建议手动运行一次 git remote set-url origin https://github.com/twojian/twojian.github.io.git
+$RemoteURL = "https://github.com/$GitHubUsername/$GitHubUsername.github.io.git"
+git remote add origin $RemoteURL 2>$null
+git remote set-url origin $RemoteURL
 
-# --------------------------
-# 提交并推送
-# --------------------------
+# 提交并强制推送
 git add .
-git commit -m "Deploy Hugo site $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-Write-Host "⏳ 正在推送到 GitHub Pages..."
+$CommitMsg = "Publish: $PostTitle $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+git commit -m $CommitMsg
+
+Write-Host "📤 正在强力推送至 GitHub..." -ForegroundColor Cyan
 git push -u origin main --force
 
-Write-Host "✅ 部署完成！访问: https://twojian.github.io/"
+Write-Host "`n✨ 部署成功！" -ForegroundColor Green
+Write-Host "提示：若图标没变，请在浏览器按 Ctrl+F5 刷新。" -ForegroundColor Gray
+
+Set-Location $ProjectDir

@@ -2,24 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:4110/posts/hello/</loc>
-    <lastmod>2025-12-30T17:17:50+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:4110/posts/</loc>
-    <lastmod>2025-12-30T17:17:50+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:4110/</loc>
-    <lastmod>2025-12-30T17:17:50+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:4110/tags/example/</loc>
+    <loc>https://twojian.github.io/tags/ai/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:4110/tags/</loc>
+    <loc>https://twojian.github.io/categories/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:4110/posts/my-first-post/</loc>
+    <loc>https://twojian.github.io/tags/example/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:4110/categories/</loc>
+    <loc>https://twojian.github.io/tags/hugo/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/posts/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/posts/steam-steel-and-infinite-mindsivan-zhao-2d7cd32c4e888068ae5cde35993ca7bd/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/tags/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/posts/my-first-post/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/archives/</loc>
+  </url><url>
+    <loc>https://twojian.github.io/search/</loc>
   </url>
 </urlset>

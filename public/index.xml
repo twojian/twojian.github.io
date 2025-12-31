@@ -2,29 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Twojian Blog</title>
-    <link>http://localhost:4110/</link>
+    <link>https://twojian.github.io/</link>
     <description>Recent content on Twojian Blog</description>
-    <image>
-      <title>Twojian Blog</title>
-      <url>http://localhost:4110/%3Clink%20%E6%88%96%E6%9C%AC%E5%9C%B0%E8%B7%AF%E5%BE%84%E7%94%A8%E4%BA%8E%20OpenGraph/Twitter%3E</url>
-      <link>http://localhost:4110/%3Clink%20%E6%88%96%E6%9C%AC%E5%9C%B0%E8%B7%AF%E5%BE%84%E7%94%A8%E4%BA%8E%20OpenGraph/Twitter%3E</link>
-    </image>
     <generator>Hugo -- 0.153.4</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 30 Dec 2025 17:17:50 +0800</lastBuildDate>
-    <atom:link href="http://localhost:4110/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Dec 2025 12:00:00 +0800</lastBuildDate>
+    <atom:link href="https://twojian.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello Hugo</title>
-      <link>http://localhost:4110/posts/hello/</link>
-      <pubDate>Tue, 30 Dec 2025 17:17:50 +0800</pubDate>
-      <guid>http://localhost:4110/posts/hello/</guid>
-      <description></description>
+      <title>Steam, Steel, and Infinite Minds——Ivan Zhao</title>
+      <link>https://twojian.github.io/posts/steam-steel-and-infinite-mindsivan-zhao-2d7cd32c4e888068ae5cde35993ca7bd/</link>
+      <pubDate>Tue, 30 Dec 2025 12:00:00 +0800</pubDate>
+      <guid>https://twojian.github.io/posts/steam-steel-and-infinite-mindsivan-zhao-2d7cd32c4e888068ae5cde35993ca7bd/</guid>
+      <description>这篇文章介绍了Ai的方向</description>
     </item>
     <item>
       <title>我的第一篇文章</title>
-      <link>http://localhost:4110/posts/my-first-post/</link>
+      <link>https://twojian.github.io/posts/my-first-post/</link>
       <pubDate>Tue, 30 Dec 2025 12:00:00 +0800</pubDate>
-      <guid>http://localhost:4110/posts/my-first-post/</guid>
+      <guid>https://twojian.github.io/posts/my-first-post/</guid>
       <description>这是第一篇示例文章。</description>
     </item>
   </channel>
