@@ -22,7 +22,7 @@ jobs:
 
       # 2. 安装 Hugo
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v5
+        uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.160.0'  # >=0.146，PaperMod 最新版兼容
           extended: true
@@ -33,7 +33,7 @@ jobs:
 
       # 4. 部署到 gh-pages 分支
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v5
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
