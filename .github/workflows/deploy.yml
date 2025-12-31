@@ -1,37 +1,42 @@
 ﻿name: Deploy Hugo site to GitHub Pages
 
+# 当 source 分支有 push 时触发
 on:
   push:
     branches:
       - source
 
 permissions:
-  contents: write
+  contents: write   # 允许 Actions 修改 gh-pages 分支
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout source branch
+      # 1. 拉取仓库，包括子模块
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: true
-          fetch-depth: 0
+          submodules: true       # 确保 PaperMod 被拉取
+          fetch-depth: 0         # 完整 commit 历史
 
+      # 2. 安装 Hugo
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@v5
         with:
-          hugo-version: "0.153.4"
+          hugo-version: '0.160.0'  # >=0.146，PaperMod 最新版兼容
           extended: true
 
-      - name: Build site (production)
-        run: |
-          hugo --environment production
+      # 3. 构建 Hugo 网站
+      - name: Build Hugo site
+        run: hugo --minify --environment production
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      # 4. 部署到 gh-pages 分支
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
+          user_name: "GitHub Actions"
+          user_email: "actions@github.com"
