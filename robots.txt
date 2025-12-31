@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://twojian.github.io/sitemap.xml
