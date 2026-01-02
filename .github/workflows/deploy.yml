@@ -24,7 +24,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.160.0'  # >=0.146，PaperMod 最新版兼容
+          hugo-version: '0.153.4'  # >=0.146，PaperMod 最新版兼容
           extended: true
 
       # 3. 构建 Hugo 网站

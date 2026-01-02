@@ -1,0 +1,19 @@
+{{/* 获取 Markdown 中的图片路径 */}}
+{{- $addr := .Destination -}}
+
+{{/* 在当前页面的资源中查找匹配的文件 [2] */}}
+{{- $img := .Page.Resources.GetMatch $addr -}}
+
+{{- if $img -}}
+  {{/* 如果找到了资源，利用 Hugo Pipes 进行优化（例如调整大小） [3] */}}
+  {{- $optimized := $img.Resize "1000x" -}}
+  
+  <figure>
+    <img src="{{ $optimized.RelPermalink }}" 
+         alt="{{ .Text }}" 
+         title="{{ .Title }}">
+  </figure>
+{{- else -}}
+  {{/* 如果没找到资源（可能是外部链接或静态文件夹路径），则按原样输出 */}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+{{- end -}}

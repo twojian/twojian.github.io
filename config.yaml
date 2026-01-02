@@ -46,10 +46,11 @@ params:
   # 自定义与样式控制
   # --------------------------
   assets:
+    customCSS: ["css/custom.css"]
     favicon: "/favicon.ico"
     favicon16x16: "/favicon-16x16.png"
     favicon32x32: "/favicon-32x32.png"
-    apple_touch_icon: "/apple-touch-icon.png"
+
   ShowReadingTime: true               # 是否在文章元数据中显示预计阅读时间
   ShowShareButtons: true              # 是否在文章末尾显示社交平台分享按钮
   ShowPostNavLinks: true              # 是否显示“上一篇/下一篇”导航
@@ -71,7 +72,7 @@ params:
   # --------------------------
   label:
     text: "Twojian's Home"            # 导航栏 Logo 文字
-    icon: /apple-touch-icon.png       # 导航栏 Logo 图标路径
+    icon:        # 导航栏 Logo 图标路径
     iconHeight: 18                    # 图标显示高度（px）
 
   # --------------------------
