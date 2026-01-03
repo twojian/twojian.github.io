@@ -8,7 +8,7 @@
 <meta name="robots" content="index, follow">
 <title>Twojian Blog</title>
 <meta name="keywords" content="Blog, Hugo, PaperMod">
-<meta name="description" content="我的博客描述">
+<meta name="description" content="记录个人学习、生活、工作、科研等">
 <meta name="author" content="Twojian">
 <link rel="canonical" href="https://twojian.github.io/">
 <meta name="google-site-verification" content="XYZabc">
@@ -76,15 +76,28 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://twojian.github.io/">
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ],
+    throwOnError: false
+  });">
+</script>
+
+<meta property="og:url" content="https://twojian.github.io/">
   <meta property="og:site_name" content="Twojian Blog">
   <meta property="og:title" content="Twojian Blog">
-  <meta property="og:description" content="我的博客描述">
+  <meta property="og:description" content="记录个人学习、生活、工作、科研等">
   <meta property="og:locale" content="zh-cn">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Twojian Blog">
-<meta name="twitter:description" content="我的博客描述">
+<meta name="twitter:description" content="记录个人学习、生活、工作、科研等">
 
 <script type="application/ld+json">
 {
@@ -92,10 +105,10 @@
   "@type": "Organization",
   "name": "Twojian Blog",
   "url": "https://twojian.github.io/",
-  "description": "我的博客描述",
+  "description": "记录个人学习、生活、工作、科研等",
   "logo": "https://twojian.github.io/favicon.ico",
   "sameAs": [
-      "https://x.com/", "https://stackoverflow.com", "https://github.com/twojian/"
+      "https://github.com/twojian/"
   ]
 }
 </script>
@@ -135,8 +148,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://twojian.github.io/categories/" title="类别">
-                    <span>类别</span>
+                <a href="https://twojian.github.io/categories/" title="分类">
+                    <span>分类</span>
                 </a>
             </li>
             <li>
@@ -149,46 +162,20 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li>
-                <a href="https://example.org" title="分享">
-                    <span>分享</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                </a>
-            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
 <article class="first-entry home-info">
     <header class="entry-header">
-        <h1>Hi there is Twojian&rsquo;s blog👋</h1>
+        <h1>Hi 这里是 Twojian 的博客👋</h1>
     </header>
     <div class="entry-content">
-        欢迎来到Twojian的博客
+        关于个人计算机考研笔记、数学基础与技术思考<br>
+记录可复用、可验证、可长期维护的知识点内容
     </div>
     <footer class="entry-footer">
         <div class="social-icons" >
-    <a href="https://x.com/" target="_blank" rel="noopener noreferrer me"
-        title="X">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path
-        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
-    </path>
-</svg>
-    </a>
-    <a href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer me"
-        title="Stackoverflow">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M2.913 16.041v6.848h17.599v-6.848M7.16 18.696h8.925M7.65 13.937l8.675 1.8M9.214 9.124l8.058 3.758M12.086 4.65l6.849 5.66M15.774 1.111l5.313 7.162" />
-</svg>
-    </a>
     <a href="https://github.com/twojian/" target="_blank" rel="noopener noreferrer me"
         title="Github">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -218,8 +205,8 @@
 操作系统就是伴随着&#34;多道程序技术&#34;而出现的。因此，操作系统和程序并发是一起诞生的。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-30 12:00:00 +0800 +0800'>December 30, 2025</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>999 words</span>&nbsp;·&nbsp;<span>Twojian</span></footer>
-  <a class="entry-link" aria-label="post link to 408|操作系统笔记：第一章 操作系统概述" href="https://twojian.github.io/posts/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0-/"></a>
+  <footer class="entry-footer"><span title='2025-12-30 12:00:00 +0800 +0800'>2025-12-30</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>999 words</span>&nbsp;·&nbsp;<span>Twojian</span></footer>
+  <a class="entry-link" aria-label="post link to 408|操作系统笔记：第一章 操作系统概述" href="https://twojian.github.io/posts/blog/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -228,34 +215,30 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Latex基本语法 一、数学公式的基本书写规则 1. 行内公式与行间公式 行内公式用于段落中嵌入表达式：
-$$ 这是一个函数 f(x)=x^2&#43;1 的例子 $$
-这是一个函数 f(x)=x^2&#43;1 的例子 行间公式用于独立、强调的数学表达：
-$$ f(x)=x^2&#43;1
-$$
-f(x)=x^2&#43;1 带编号的行间公式（论文、作业常用）：
-$$ \begin{equation} f(x)=x^2&#43;1 \end{equation}
-$$
-\begin{equation} f(x)=x^2&#43;1 \end{equation} 带编号的行间公式（论文、作业常用）：
-$$ \begin{equation} f(x)=x^2&#43;1 \end{equation}
-$$
-\begin{equation} f(x)=x^2&#43;1 \end{equation} 手动指定编号：
-$$ \begin{equation} f(x)=x^2&#43;1 \tag{A} \end{equation} $$
-\begin{equation} f(x)=x^2&#43;1 \tag{A} \end{equation} 二、上下标、分式与根式（最基础但最常错） 1. 上标与下标 $$ x^2,\quad a_n,\quad x_i^k
-$$
-x^2,\quad a_n,\quad x_i^k 多个字符必须用花括号：
-$$ x^{n&#43;1},\quad a_{i,j}
-$$
-x^{n&#43;1},\quad a_{i,j} 2. 分式 $$ \frac{a}{b},\quad \frac{x&#43;1}{x-1}
+    <p>Latex基本语法 一、数学公式的基本书写规则 行内公式与行间公式 行内公式用于段落中嵌入表达式：
+$ ... $ → 行内公式 行间公式用于独立、强调的数学表达：
+$$ ... $$ → 只能放纯数学表达 1、不编号的行间公式： $$ f(x)=x^2&#43;1 $$
+$$ f(x)=x^2&#43;1 $$ 2、带编号的行间公式（论文、作业常用）： $$ \begin{equation} f(x)=x^2&#43;1 \end{equation}$$
+\begin{equation} f(x)=x^2&#43;1 \end{equation} 3、手动指定编号： $$ \begin{equation} f(x)=x^2&#43;1 \tag{A} \end{equation}$$
+\begin{equation} f(x)=x^2&#43;1 \tag{A} \end{equation} 二、上下标、分式与根式（最基础但最常错） 1. 上标与下标 $$ x^2,\quad a_n,\quad x_i^k $$
+x^2,\quad a_n,\quad x_i^k 多个字符必须用花括号： $$ x^{n&#43;1},\quad a_{i,j} $$
+x^{n&#43;1},\quad a_{i,j} 2. 分式 $$ \frac{a}{b},\quad \frac{x&#43;1}{x-1} $$
+\frac{a}{b},\quad \frac{x&#43;1}{x-1} 嵌套分式： $$ \frac{1}{1&#43;\frac{1}{n}} $$
+\frac{1}{1&#43;\frac{1}{n}} 3. 根式 $$ \sqrt{x},\quad \sqrt{x&#43;1} $$
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-30 12:00:00 +0800 +0800'>December 30, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>588 words</span>&nbsp;·&nbsp;<span>Twojian</span></footer>
-  <a class="entry-link" aria-label="post link to Latex基本语法" href="https://twojian.github.io/posts/latex%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-/"></a>
+  <footer class="entry-footer"><span title='2025-12-30 12:00:00 +0800 +0800'>2025-12-30</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>582 words</span>&nbsp;·&nbsp;<span>Twojian</span></footer>
+  <a class="entry-link" aria-label="post link to Latex基本语法" href="https://twojian.github.io/posts/tutorials/latex%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-/"></a>
 </article>
 
 <article class="post-entry"> 
 <figure class="entry-cover">
-        <img loading="lazy" src="https://twojian.github.io/%E5%B0%81%E9%9D%A2.jpg" alt="Steam, Steel, and Infinite Minds">
+            <img loading="lazy"
+                srcset='https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/%E5%B0%81%E9%9D%A2_hu_49f724c77525e559.jpg 360w,https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/%E5%B0%81%E9%9D%A2_hu_8bb153da291031f2.jpg 480w,https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/%E5%B0%81%E9%9D%A2_hu_78020cb0c0615b5b.jpg 720w,https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/%E5%B0%81%E9%9D%A2.jpg 900w'
+                src="https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/%E5%B0%81%E9%9D%A2.jpg"
+                sizes="(min-width: 768px) 720px, 100vw"
+                width="900" height="360"
+                alt="Steam, Steel, and Infinite Minds">
 </figure>
   <header class="entry-header">
     <h2 class="entry-hint-parent">Steam, Steel, and Infinite Minds——Ivan Zhao
@@ -267,22 +250,8 @@ Master the Material Define the Era.第一部分：历史的材料与卡内基的
 每个时代都由其“奇迹材料”所塑造。钢铁锻造了镀金时代，半导体开启了数字时代。现在，AI 作为“无限心智”已经到来。如果历史能教会我们什么，那就是：谁掌握了材料，谁就定义了时代。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-30 12:00:00 +0800 +0800'>December 30, 2025</span>&nbsp;·&nbsp;<span>9 min</span>&nbsp;·&nbsp;<span>1867 words</span>&nbsp;·&nbsp;<span>Twojian</span></footer>
-  <a class="entry-link" aria-label="post link to Steam, Steel, and Infinite Minds——Ivan Zhao" href="https://twojian.github.io/posts/steam-steel-and-infinite-minds/steam-steel-and-infinite-minds/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">我的第一篇文章
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>这是我的第一篇示例文章内容。
-你可以在这里写 Markdown，例如：
-这是一个列表 这是另一项 print(&#34;Hello Hugo &#43; PaperMod!&#34;) </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-30 12:00:00 +0800 +0800'>December 30, 2025</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>9 words</span>&nbsp;·&nbsp;<span>Twojian</span></footer>
-  <a class="entry-link" aria-label="post link to 我的第一篇文章" href="https://twojian.github.io/posts/my-first-post/"></a>
+  <footer class="entry-footer"><span title='2025-12-30 12:00:00 +0800 +0800'>2025-12-30</span>&nbsp;·&nbsp;<span>9 min</span>&nbsp;·&nbsp;<span>1867 words</span>&nbsp;·&nbsp;<span>Twojian</span></footer>
+  <a class="entry-link" aria-label="post link to Steam, Steel, and Infinite Minds——Ivan Zhao" href="https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/"></a>
 </article>
     </main>
     

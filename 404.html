@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>404 Page not found | Twojian Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="我的博客描述">
+<meta name="description" content="记录个人学习、生活、工作、科研等">
 <meta name="author" content="Twojian">
 <link rel="canonical" href="https://twojian.github.io/404.html">
 <meta name="google-site-verification" content="XYZabc">
@@ -73,15 +73,28 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://twojian.github.io/404.html">
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ],
+    throwOnError: false
+  });">
+</script>
+
+<meta property="og:url" content="https://twojian.github.io/404.html">
   <meta property="og:site_name" content="Twojian Blog">
   <meta property="og:title" content="404 Page not found">
-  <meta property="og:description" content="我的博客描述">
+  <meta property="og:description" content="记录个人学习、生活、工作、科研等">
   <meta property="og:locale" content="zh-cn">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="404 Page not found">
-<meta name="twitter:description" content="我的博客描述">
+<meta name="twitter:description" content="记录个人学习、生活、工作、科研等">
 
 </head>
 <body class="list" id="top">
@@ -119,8 +132,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://twojian.github.io/categories/" title="类别">
-                    <span>类别</span>
+                <a href="https://twojian.github.io/categories/" title="分类">
+                    <span>分类</span>
                 </a>
             </li>
             <li>
@@ -131,17 +144,6 @@
             <li>
                 <a href="https://twojian.github.io/tags/" title="标签">
                     <span>标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://example.org" title="分享">
-                    <span>分享</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
                 </a>
             </li>
         </ul>

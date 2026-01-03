@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://twojian.github.io/posts/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0-/</loc>
+    <loc>https://twojian.github.io/posts/blog/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
     <loc>https://twojian.github.io/tags/ai/</loc>
@@ -11,13 +11,13 @@
     <loc>https://twojian.github.io/categories/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://twojian.github.io/tags/example/</loc>
-    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://twojian.github.io/tags/hugo/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://twojian.github.io/posts/latex%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-/</loc>
+    <loc>https://twojian.github.io/tags/latex/</loc>
+    <lastmod>2025-12-30T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://twojian.github.io/posts/tutorials/latex%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
     <loc>https://twojian.github.io/tags/math/</loc>
@@ -26,7 +26,7 @@
     <loc>https://twojian.github.io/posts/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://twojian.github.io/posts/steam-steel-and-infinite-minds/steam-steel-and-infinite-minds/</loc>
+    <loc>https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
     <loc>https://twojian.github.io/tags/</loc>
@@ -35,7 +35,7 @@
     <loc>https://twojian.github.io/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://twojian.github.io/posts/my-first-post/</loc>
+    <loc>https://twojian.github.io/categories/%E5%85%AC%E5%BC%8F%E8%A1%A8/</loc>
     <lastmod>2025-12-30T12:00:00+08:00</lastmod>
   </url><url>
     <loc>https://twojian.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
