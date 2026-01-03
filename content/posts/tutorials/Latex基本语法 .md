@@ -1,85 +1,72 @@
 ---
 title: "Latex基本语法"
 date: 2025-12-30T12:00:00+08:00
-tags: ["math"]
 author: "Twojian"
-showToc: true
-TocOpen: false
 draft: false
-hidemeta: false
-description: "可能用的到的latex代码，美观论文和笔记"
+
+# --- 封面图设置  ---
 cover:
-    image: ""
-    alt: ""
-    caption: ""
+    image: "" # 图片文件名（确保图片就在同一个文件夹下）
+    alt: ""        # 辅助文字
+    caption: ""      # 图片下方的说明
+    relative: false              # 重要：设为 true 才会从当前文件夹查找图片
+# --- 分类与标签 ---
+categories:
+    - "公式表"
+tags:
+    - "math"
+    - "Latex"
+# --- SEO 与显示控制 ---
+description: "可能用的到的latex代码，美观论文和笔记" # 摘要/描述
+showToc: true                   # 是否显示目录
+TocOpen: false                  # 目录是否默认开启
+hidemeta: false                 # 是否隐藏作者、日期等元数据
+math: true                      # 是否显示Latex公式
 ---
 # Latex基本语法
 
 ## 一、数学公式的基本书写规则
 
-### 1. 行内公式与行间公式
+### 行内公式与行间公式
 
 行内公式用于段落中嵌入表达式：
-
-$$
-这是一个函数
-f(x)=x^2+1
- 的例子
-$$
-
 ```latex
-这是一个函数
-f(x)=x^2+1
-的例子
+$ ... $ → 行内公式
 ```
 
 行间公式用于独立、强调的数学表达：
+```latex
+$$ ... $$ → 只能放纯数学表达
+```
 
+
+### 1、不编号的行间公式：
 $$
 f(x)=x^2+1
-
 $$
 
 ```latex
+$$
 f(x)=x^2+1
+$$
 ```
 
-带编号的行间公式（论文、作业常用）：
-
+### 2、带编号的行间公式（论文、作业常用）：
 $$
 \begin{equation}
 f(x)=x^2+1
-\end{equation}
-
-$$
-
-```latex
-\begin{equation}
-f(x)=x^2+1
-\end{equation}
-```
-带编号的行间公式（论文、作业常用）：
-
-$$
-\begin{equation}
-f(x)=x^2+1
-\end{equation}
-
-$$
+\end{equation}$$
 
 ```latex
 \begin{equation}
 f(x)=x^2+1
 \end{equation}
 ```
-
-手动指定编号：
-
+### 3、手动指定编号：
 $$
 \begin{equation}
 f(x)=x^2+1 \tag{A}
-\end{equation}
-$$
+\end{equation}$$
 
 ```latex
 \begin{equation}
@@ -91,10 +78,8 @@ f(x)=x^2+1 \tag{A}
 ## 二、上下标、分式与根式（最基础但最常错）
 
 ### 1. 上标与下标
-
 $$
 x^2,\quad a_n,\quad x_i^k
-
 $$
 
 ```latex
@@ -102,10 +87,8 @@ x^2,\quad a_n,\quad x_i^k
 ```
 
 多个字符必须用花括号：
-
 $$
 x^{n+1},\quad a_{i,j}
-
 $$
 
 ```latex
@@ -113,10 +96,8 @@ x^{n+1},\quad a_{i,j}
 ```
 
 ### 2. 分式
-
 $$
 \frac{a}{b},\quad \frac{x+1}{x-1}
-
 $$
 
 ```latex
@@ -124,10 +105,8 @@ $$
 ```
 
 嵌套分式：
-
 $$
 \frac{1}{1+\frac{1}{n}}
-
 $$
 
 ```latex
@@ -135,21 +114,17 @@ $$
 ```
 
 ### 3. 根式
-
 $$
 \sqrt{x},\quad \sqrt{x+1}
-
 $$
 
 ```latex
 \sqrt{x},\quad \sqrt{x+1}
 ```
 
-n 次根：
-
+### 4. n 次根：
 $$
 \sqrt[n]{x}
-
 $$
 
 ```latex
@@ -161,10 +136,7 @@ $$
 ## 三、常见运算符与数学符号
 
 ### 1. 四则与逻辑关系
-
-$$
-+ \quad - \quad \times \quad \cdot \quad \div
-
+$$ + \quad - \quad \times \quad \cdot \quad \div
 $$
 
 ```latex
@@ -172,10 +144,8 @@ $$
 ```
 
 推荐乘法用 `\cdot`：
-
 $$
 a \cdot b
-
 $$
 
 ```latex
@@ -183,10 +153,8 @@ a \cdot b
 ```
 
 等价与不等关系：
-
 $$
 = \quad \neq \quad < \quad > \quad \le \quad \ge
-
 $$
 
 ```latex
@@ -194,30 +162,24 @@ $$
 ```
 
 ### 2. 求和、乘积、极限
-
 $$
 \sum_{i=1}^{n} a_i
-
 $$
 
 ```latex
 \sum_{i=1}^{n} a_i
 
 ```
-
 $$
 \prod_{i=1}^{n} a_i
-
 $$
 
 ```latex
 \prod_{i=1}^{n} a_i
 
 ```
-
 $$
 \lim_{x \to 0} f(x)
-
 $$
 
 ```latex
@@ -229,19 +191,15 @@ $$
 ## 四、函数、导数与积分（数学与机器学习必备）
 
 ### 1. 常见函数
-
 $$
 \sin x,\quad \cos x,\quad \tan x
-
 $$
 
 ```latex
 \sin x,\quad \cos x,\quad \tan x
 ```
-
 $$
 \ln x,\quad \log x,\quad \exp(x)
-
 $$
 
 ```latex
@@ -251,10 +209,8 @@ $$
 ### 2. 导数
 
 一阶导数：
-
 $$
 f'(x)
-
 $$
 
 ```latex
@@ -262,10 +218,8 @@ f'(x)
 ```
 
 高阶导数：
-
 $$
 f''(x),\quad f^{(n)}(x)
-
 $$
 
 ```latex
@@ -273,10 +227,8 @@ $$
 ```
 
 微分形式（规范推荐）：
-
 $$
 \frac{d f(x)}{d x}
-
 $$
 
 ```latex
@@ -284,19 +236,15 @@ $$
 ```
 
 偏导数：
-
 $$
 \frac{\partial f}{\partial x}
-
 $$
 
 ```latex
 \frac{\partial f}{\partial x}
 ```
-
 $$
 \frac{\partial^2 f}{\partial x^2}
-
 $$
 
 ```latex
@@ -306,10 +254,8 @@ $$
 ### 3. 积分
 
 不定积分：
-
 $$
 \int f(x)\,dx
-
 $$
 
 ```latex
@@ -317,10 +263,8 @@ $$
 ```
 
 定积分：
-
 $$
 \int_{0}^{1} f(x)\,dx
-
 $$
 
 ```latex
@@ -328,10 +272,8 @@ $$
 ```
 
 二重积分（拓展）：
-
 $$
 \iint_D f(x,y)\,dx\,dy
-
 $$
 
 ```latex
@@ -343,19 +285,15 @@ $$
 ## 五、集合、逻辑与离散数学常用符号
 
 ### 1. 集合表示
-
 $$
 \{1,2,3\}
-
 $$
 
 ```latex
 \{1,2,3\}
 ```
-
 $$
 \{x \mid x>0\}
-
 $$
 
 ```latex
@@ -363,19 +301,15 @@ $$
 ```
 
 ### 2. 属于与包含
-
 $$
 \in \quad \notin
-
 $$
 
 ```latex
 \in \quad \notin
 ```
-
 $$
 \subset \quad \subseteq \quad \supseteq
-
 $$
 
 ```latex
@@ -383,47 +317,37 @@ $$
 ```
 
 ### 3. 交并补
-
 $$
 A \cup B,\quad A \cap B
-
 $$
 
 ```latex
 A \cup B,\quad A \cap B
 ```
-
 $$
-A^c
-$$
+A^c$$
 
 ```latex
 A^c
 ```
 
 ### 4. 逻辑符号
-
 $$
 ⁍
-
 $$
 
 ```latex
 \forall \quad \exists
 ```
-
 $$
 ⁍
-
 $$
 
 ```latex
 \land \quad \lor \quad \neg
 ```
-
 $$
 ⁍
-
 $$
 
 ```latex
@@ -435,10 +359,8 @@ $$
 ## 六、向量、矩阵与线性代数（计算机考研高频）
 
 ### 1. 向量
-
 $$
 \vec{x}
-
 $$
 
 ```latex
@@ -446,10 +368,8 @@ $$
 ```
 
 粗体向量（更常用）：
-
 $$
 \mathbf{x}
-
 $$
 
 ```latex
@@ -457,13 +377,11 @@ $$
 ```
 
 ### 2. 矩阵
-
 $$
 \begin{matrix}
 a & b \\
 c & d
 \end{matrix}
-
 $$
 
 ```latex
@@ -474,13 +392,11 @@ c & d
 ```
 
 带括号：
-
 $$
 \begin{pmatrix}
 a & b \\
 c & d
 \end{pmatrix}
-
 $$
 
 ```latex
@@ -491,13 +407,11 @@ c & d
 ```
 
 行列式：
-
 $$
 \begin{vmatrix}
 a & b \\
 c & d
 \end{vmatrix}
-
 $$
 
 ```latex
@@ -508,10 +422,8 @@ c & d
 ```
 
 ### 3. 转置与逆
-
 $$
 A^T,\quad A^{-1}
-
 $$
 
 ```latex
@@ -521,14 +433,12 @@ A^T,\quad A^{-1}
 ---
 
 ## 七、分段函数与条件表达
-
 $$
 f(x)=
 \begin{cases}
 x^2, & x \ge 0 \\
 -x, & x < 0
 \end{cases}
-
 $$
 
 ```latex
@@ -544,13 +454,11 @@ x^2, & x \ge 0 \\
 ---
 
 ## 八、对齐公式（步骤推导必用）
-
 $$
 \begin{aligned}
 f(x) &= x^2 + 2x + 1 \\
      &= (x+1)^2
 \end{aligned}
-
 $$
 
 ```latex
@@ -567,10 +475,8 @@ f(x) &= x^2 + 2x + 1 \\
 ## 九、括号与自适应大小
 
 普通括号：
-
 $$
 ( ) \quad [ ] \quad \{ \}
-
 $$
 
 ```latex
@@ -580,19 +486,15 @@ $$
 ```
 
 自动调整大小（非常重要）：
-
 $$
 \left( \frac{a}{b} \right)
-
 $$
 
 ```latex
 \left( \frac{a}{b} \right)
 ```
-
 $$
 \left[ \sum_{i=1}^{n} a_i \right]
-
 $$
 
 ```latex
@@ -604,10 +506,8 @@ $$
 ## 十、文本与公式混排
 
 在公式中插入文字说明：
-
 $$
 x > 0 \quad \text{其中 } x \in \mathbb{R}
-
 $$
 
 ```latex
@@ -617,19 +517,15 @@ x > 0 \quad \text{其中 } x \in \mathbb{R}
 ---
 
 ## 十一、常见黑板粗体集合（规范写法）
-
 $$
 \mathbb{N} \quad \mathbb{Z} \quad \mathbb{Q}
-
 $$
 
 ```latex
 \mathbb{N} \quad \mathbb{Z} \quad \mathbb{Q}
 ```
-
 $$
 \mathbb{R} \quad \mathbb{C}
-
 $$
 
 ```latex

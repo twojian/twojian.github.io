@@ -1,0 +1,24 @@
+/* 全站背景设置 */
+:root {
+    --theme: url("/images/Alps.jpg") center/cover no-repeat fixed;
+}
+
+body {
+    background: none !important; /* 清除 PaperMod 默认背景变量 */
+    background-image: url("/images/Alps.jpg") !important;
+    background-size: cover !important;          /* 覆盖整个视口 */
+    background-position: center !important;     /* 居中 */
+    background-repeat: no-repeat !important;    /* 不平铺 */
+    background-attachment: fixed !important;    /* 滚动时背景固定 */
+    background-color: transparent !important; /* 避免覆盖颜色 */
+}
+/* 内容区域半透明，能看到背景图 */
+.main, .post-entry, .section {
+    background-color: rgba(255, 255, 255, 0.85) !important; /* 亮模式 */
+}
+
+[data-theme="dark"] .main,
+[data-theme="dark"] .post-entry,
+[data-theme="dark"] .section {
+    background-color: rgba(29, 30, 32, 0.85) !important; /* 暗模式 */
+}
