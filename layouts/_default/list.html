@@ -1,0 +1,123 @@
+{{ define "main" }}
+
+<!-- 三列布局容器 -->
+<div class="three-column-wrapper">
+
+  <!-- 左侧栏 -->
+  {{ partial "custom/sidebar-left.html" . }}
+
+  <!-- 中间文章列表 -->
+  <div class="main-content">
+
+    {{/* ----------------------------
+        获取需要显示的页面集合
+        ---------------------------- */}}
+    {{- $pages := union .RegularPages .Sections }}
+
+    {{/* 首页过滤：仅显示 mainSections，隐藏 hiddenInHomeList */}}
+    {{- if .IsHome }}
+      {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+      {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+    {{- end }}
+
+    {{/* 分页器 */}}
+    {{- $paginator := .Paginate $pages }}
+
+    {{/* 当前页面是否是分类/标签页 */}}
+    {{- $term := .Data.Term }}
+
+    {{/* ----------------------------
+        遍历每一篇文章
+        ---------------------------- */}}
+    {{- range $index, $page := $paginator.Pages }}
+
+      {{/* 设置文章外层 class：默认 post-entry */}}
+      {{- $class := "post-entry" }}
+
+      {{/* 首页第一篇文章特殊样式 first-entry */}}
+      {{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
+      {{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
+        {{- $class = "first-entry" }}
+      {{- else if $term }}
+        {{- $class = "post-entry tag-entry" }}
+      {{- end }}
+
+      <article class="{{ $class }}">
+
+        {{/* ----------------------------
+            封面显示
+            partial: cover.html
+            参数:
+              - cxt: 当前文章对象
+              - IsSingle: 是否是单篇文章页
+              - isHidden: 是否隐藏封面
+            ---------------------------- */}}
+        {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
+        {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
+
+        <!-- 文章头部 -->
+        <header class="entry-header">
+
+          <!-- 文章标题，包链接 -->
+          <h2 class="entry-title">
+            <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+
+            <!-- Draft 状态标记 -->
+            {{- if $page.Draft }}
+            <span class="entry-hint" title="Draft">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" fill="currentColor">
+                <path d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Z"/>
+              </svg>
+            </span>
+            {{- end }}
+
+          </h2>
+
+        </header>
+
+        <!-- 摘要显示 -->
+        {{- if (ne ($page.Param "hideSummary") true) }}
+        <div class="entry-content">
+          <p>{{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}</p>
+        </div>
+        {{- end }}
+
+        <!-- 文章元信息 -->
+        {{- if not ($page.Param "hideMeta") }}
+        <footer class="entry-footer">
+          {{ partial "post_meta.html" $page }}
+        </footer>
+        {{- end }}
+
+        <!-- 整篇文章点击跳转 -->
+        <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
+
+      </article>
+
+    {{- end }}
+
+    <!-- ----------------------------
+        分页
+        可保留旧主题逻辑
+        ---------------------------- -->
+    {{ if gt $paginator.TotalPages 1 }}
+    <footer class="page-footer">
+      <nav class="pagination">
+        {{- if $paginator.HasPrev }}
+          <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">« 上一页</a>
+        {{- end }}
+        {{- if $paginator.HasNext }}
+          <a class="next" href="{{ $paginator.Next.URL | absURL }}">下一页 »</a>
+        {{- end }}
+      </nav>
+    </footer>
+    {{ end }}
+
+  </div>
+
+  <!-- 右侧栏 -->
+  {{ partial "custom/sidebar-right.html" . }}
+
+</div>
+
+{{ end }}

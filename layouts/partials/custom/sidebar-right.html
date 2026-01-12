@@ -1,0 +1,9 @@
+<aside class="sidebar-right">
+  <h3>热门标签</h3>
+  <div class="tag-list">
+    {{ $tags := .Site.Taxonomies.tags }}
+    {{ range $tag, $pages := sort $tags "Count" "desc" }}
+      <div class="tag-item tag-{{ $tag | lower | urlize }}">{{ $tag }}</div>
+    {{ end }}
+  </div>
+</aside>

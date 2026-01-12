@@ -44,12 +44,17 @@ taxonomies:
 # 核心参数配置 (params)
 # ========================================================
 params:
+  author: "程智健"
+  avatar: "/images/彗星小鸡.png"   # 图片放在 static/images/ 下
+  email: "twojian0705@163.com"
+  github: "https://github.com/twojian"
+  wechat: "Twojian"
+  background_image: "/images/Alps.jpg"
+
   env: production                     # 环境变量：production 会启用混淆、压缩等生产环境特性
   title: "Twojian Blog"               # 页面左上角显示的名称
   description: "记录个人学习、生活、工作、科研等"          # 网站描述（SEO：搜索结果中显示的摘要）
   keywords: [Blog, Hugo, PaperMod]    # 网站关键词（SEO：利于搜索收录）
-  author: Twojian                     # 默认文章作者
-  #images: []                         # images: 用于 OpenGraph 和 Twitter 卡片预览图
   DateFormat: "2006-01-02"            # 文章日期显示格式
   defaultTheme: auto                  # 主题模式：auto(跟随系统), dark(深色), light(浅色)
 
@@ -180,3 +185,6 @@ pygmentsUseClasses: true              # 使用类名进行高亮控制（配合 
 markup:
   highlight:
     noClasses: false                  # 设置为 false 才能配合自定义 CSS
+  goldmark:
+    renderer:
+      unsafe: true                    # 允许 HTML 标签

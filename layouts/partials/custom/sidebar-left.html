@@ -1,0 +1,16 @@
+<aside class="sidebar-left">
+    <!-- 头像 -->
+    <img src="{{ .Site.Params.avatar }}" alt="头像" class="avatar">
+
+    <!-- 作者名 -->
+    <h2>{{ .Site.Params.author }}</h2>
+
+    <!-- 邮箱 -->
+    <p>邮箱: <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+
+    <!-- GitHub -->
+    <p>GitHub: <a href="{{ .Site.Params.github }}" target="_blank">{{ .Site.Params.github }}</a></p>
+
+    <!-- 微信 -->
+    <p>微信: {{ .Site.Params.wechat }}</p>
+</aside>
