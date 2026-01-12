@@ -15,6 +15,13 @@ body {
   background-attachment: fixed !important;    /* 背景固定，滚动页面时不动 */
   background-color: transparent !important;   /* 避免默认颜色覆盖背景图 */
 }
+.main {
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--gap);
+}
 
 /* ========================================================
    内容区域半透明，能看到背景图
