@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Twojian Blog</title>
-    <link>https://twojian.github.io/</link>
-    <description>Recent content on Twojian Blog</description>
+    <title>n8n 自动化平台实践笔记 on Twojian Blog</title>
+    <link>https://twojian.github.io/posts/tutorials/n8n/</link>
+    <description>Recent content in n8n 自动化平台实践笔记 on Twojian Blog</description>
     <generator>Hugo -- 0.153.4</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 12 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://twojian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://twojian.github.io/posts/tutorials/n8n/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>n8n 新手使用手册（Docker Desktop 本地环境）</title>
       <link>https://twojian.github.io/posts/tutorials/n8n/n8n-beginner-guide/</link>
@@ -127,27 +127,6 @@ docker compose up -d
 &lt;/ol&gt;
 &lt;p&gt;执行量增大：引入 Postgres&lt;/p&gt;
 &lt;p&gt;公网访问：反向代理 + HTTPS&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>408|操作系统笔记：第一章 操作系统概述</title>
-      <link>https://twojian.github.io/posts/blog/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/</link>
-      <pubDate>Tue, 30 Dec 2025 12:00:00 +0800</pubDate>
-      <guid>https://twojian.github.io/posts/blog/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/</guid>
-      <description>操作系统核心概念和发展</description>
-    </item>
-    <item>
-      <title>Latex基本语法</title>
-      <link>https://twojian.github.io/posts/tutorials/latex%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-/</link>
-      <pubDate>Tue, 30 Dec 2025 12:00:00 +0800</pubDate>
-      <guid>https://twojian.github.io/posts/tutorials/latex%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-/</guid>
-      <description>可能用的到的latex代码，美观论文和笔记</description>
-    </item>
-    <item>
-      <title>Steam, Steel, and Infinite Minds——Ivan Zhao</title>
-      <link>https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/</link>
-      <pubDate>Tue, 30 Dec 2025 12:00:00 +0800</pubDate>
-      <guid>https://twojian.github.io/posts/articles/steam-steel-and-infinite-minds/</guid>
-      <description>这篇文章介绍了Ai的方向</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>自动化 on Twojian Blog</title>
+    <link>https://twojian.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+    <description>Recent content in 自动化 on Twojian Blog</description>
+    <generator>Hugo -- 0.153.4</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 12 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://twojian.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>n8n 新手使用手册（Docker Desktop 本地环境）</title>
+      <link>https://twojian.github.io/posts/tutorials/n8n/n8n-beginner-guide/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://twojian.github.io/posts/tutorials/n8n/n8n-beginner-guide/</guid>
+      <description>&lt;h2 id=&#34;1-访问方式与基本概念&#34;&gt;1. 访问方式与基本概念&lt;/h2&gt;
+&lt;p&gt;在浏览器中访问：&lt;/p&gt;
+&lt;p&gt;http://localhost:5678&lt;/p&gt;
+&lt;p&gt;这是 n8n 的 Editor UI，用于创建和管理工作流。&lt;/p&gt;
+&lt;p&gt;n8n 的核心不是脚本，而是&lt;strong&gt;事件驱动的工作流引擎&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Workflow：工作流（有向图）&lt;/li&gt;
+&lt;li&gt;Node：节点（执行单元）&lt;/li&gt;
+&lt;li&gt;Trigger：触发器（入口）&lt;/li&gt;
+&lt;li&gt;Execution：一次执行实例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-第一个工作流的正确打开方式&#34;&gt;2. 第一个工作流的正确打开方式&lt;/h2&gt;
+&lt;p&gt;推荐从 &lt;code&gt;Manual Trigger&lt;/code&gt; 开始，目的不是“做事”，而是确认：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;执行链路正常&lt;/li&gt;
+&lt;li&gt;Execution 能生成&lt;/li&gt;
+&lt;li&gt;输入输出可追踪&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-激活activate的意义&#34;&gt;3. 激活（Activate）的意义&lt;/h2&gt;
+&lt;p&gt;未激活的工作流：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;只能手动执行&lt;/li&gt;
+&lt;li&gt;Webhook / Cron 不生效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;已激活的工作流：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自动响应事件&lt;/li&gt;
+&lt;li&gt;进入“生产态”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是新手最容易忽略的一步。&lt;/p&gt;
+&lt;h2 id=&#34;4-credentials-使用规范&#34;&gt;4. Credentials 使用规范&lt;/h2&gt;
+&lt;p&gt;Credentials 是全局资源，工作流只引用，不存储密钥。&lt;/p&gt;
+&lt;p&gt;建议：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;统一命名&lt;/li&gt;
+&lt;li&gt;避免在 Function 节点中硬编码密钥&lt;/li&gt;
+&lt;li&gt;删除前确认依赖关系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;5-execution-与调试思路&#34;&gt;5. Execution 与调试思路&lt;/h2&gt;
+&lt;p&gt;每一次执行都会生成 Execution 记录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可查看每个节点的输入输出&lt;/li&gt;
+&lt;li&gt;是排错的第一现场&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;调试优先顺序应始终是：&lt;/p&gt;
+&lt;p&gt;Execution → 节点 → 数据 → 逻辑&lt;/p&gt;
+&lt;h2 id=&#34;6-新手阶段的使用边界&#34;&gt;6. 新手阶段的使用边界&lt;/h2&gt;
+&lt;p&gt;当前本地 Docker 架构非常适合：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Webhook 自动化&lt;/li&gt;
+&lt;li&gt;API 编排&lt;/li&gt;
+&lt;li&gt;定时任务&lt;/li&gt;
+&lt;li&gt;AI API 调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;暂不建议用于高并发公网服务。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,36 @@
     <description>Recent content in Tags on Twojian Blog</description>
     <generator>Hugo -- 0.153.4</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 30 Dec 2025 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://twojian.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://twojian.github.io/tags/docker/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://twojian.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>N8n</title>
+      <link>https://twojian.github.io/tags/n8n/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://twojian.github.io/tags/n8n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>自动化</title>
+      <link>https://twojian.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://twojian.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>运维</title>
+      <link>https://twojian.github.io/tags/%E8%BF%90%E7%BB%B4/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://twojian.github.io/tags/%E8%BF%90%E7%BB%B4/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI</title>
       <link>https://twojian.github.io/tags/ai/</link>
